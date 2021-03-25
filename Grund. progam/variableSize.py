@@ -1,8 +1,10 @@
 from sys import getsizeof, maxsize
 
-
-
 class Char:
+    """
+    Custom Char klasse,
+    Tager en string med 1 karakter
+    """
     def __init__(self, val: str):
         if len(val) > 1:
             raise SyntaxError("Passed value must be a str with 1 character")
@@ -31,6 +33,8 @@ def printByteArray(var, a=4, s=0): # amount = amount; amount per line. s = start
     if not var%a == 0:
         printByteArray(var%a, a=var%a, s=var-1)    
 
-x = Char("a")
 if __name__ == "__main__":
-    pointerExample(eval(input()))
+    # Input 
+    print("Giv mig et variable\nF.eks. 53, '53', [53]")
+    pointerExample(eval(input(": ")))
+    input()

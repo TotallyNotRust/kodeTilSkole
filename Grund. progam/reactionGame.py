@@ -1,7 +1,12 @@
-import random, keyboard
-from datetime import datetime
-from time import sleep
-
+try:
+    import random, keyboard
+    from datetime import datetime
+    from time import sleep
+except NameError:
+    print("Please run this command")
+    print("python -m pip install -r requirements.txt")
+    input()
+    exit()
 now = datetime.now
 
 timeNow = now()
