@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<link href="websiteStylingMain.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Google code prettify https://github.com/googlearchive/code-prettify -->
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<html>
+<head>
+    <h1 class="header">
+        Projekter
+    </h1>
+</head>
+<body>
+    <div class="textField">
+        <div class="lg-text">Sorterings algoritme med Numba</div>
+        <pre class="prettyprint linenums">
+from numba import jit, types # pip install numba
+
+from numba.typed import List
+import random, datetime
+
+def partitionJittedMethod(array, start=0, end=-1):
+    pivot = array[start]
+    low = start + 1
+    high = end
+    while True:
+        while low <= high and array[high] >= pivot:
+            high = high - 1
+        while low <= high and array[low] <= pivot:
+            low = low + 1
+        if low <= high:
+            array[low], array[high] = array[high], array[low]
+        else:
+            break
+    array[start], array[high] = array[high], array[start]
+
+    return high
+
+def quickSortJittedMethod(array, start, end):
+    if start >= end:
+        return
+
+    p = partitionJitted(array, start, end)
+    quickSortJitted(array, start, p-1)
+    quickSortJitted(array, p+1, end)
+
+partitionJitted = jit(partitionJittedMethod, nopython=True)
+quickSortJitted = jit(quickSortJittedMethod, nopython=True)
+
+for i in range(1_000):
+    arg = list(range(100_000))
+    random.shuffle(arg)
+    arg = List(arg)
+    start = datetime.datetime.now()
+    quickSortJitted(arg, 0,  len(arg)-1)
+    timeInMs = (datetime.datetime.now() - start).microseconds / 1000
+    print(f"{i:< 4}: Passed: {list(arg)==sorted(arg)} | Time in milliseconds: {timeInMs}")
+        </pre>
+    </div>
+
+</body>
+<link href="CodePrettify.css" rel="stylesheet" />
+<script src="JavaScript.js"></script>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="Om mig.html">Om mig</a>
+    <a href="Projekter.html">Projekter</a>
+    <a href="Kontakt.html">Kontakt mig</a>
+</div>
+<span style="font-size:30px;cursor:pointer;position:fixed;top:0pc" onclick="openNav()">&#9776;</span>
+</html>
