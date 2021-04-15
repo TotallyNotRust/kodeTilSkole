@@ -25,7 +25,7 @@ class ItemMenu(Window):
 class OrderMenu(Window):
     def __init__(self, curs):
         itemsTable = Table(self.root, ["oId", "address", "city", "firstname"])
-        itemsTable.fill(curs, "orders", getChildFrom={"uid": "users"}, )
+        itemsTable.fill(curs, "orders", getChildFrom=["users", "uId"], )
 
 class CustomTkObject:
     def __add__(self, *kw):
@@ -44,10 +44,10 @@ class Table(CustomTkObject):
         for i in toAdd:
             self.sheet.insert_row(i)
 
-    def __init__(self, root, headers=["id", "name", "price", "stock"]):
+    def __init__(self, root, headers=None):
         super().__init__(root)
         self.headers = headers
-        self.sheet = Sheet(root, width=(len(self.headers)*120)+30, show_x_scrollbar=False, headers=self.headers)
+        self.sheet = Sheet(root, width=(len(self.headers)*120)+30 if headers != None else 200, show_x_scrollbar=False, headers=self.headers if headers else [])
         self.sheet.grid(row=0,column=0, columnspan=3)
         self.root = root
     
@@ -57,14 +57,15 @@ class Table(CustomTkObject):
             conditions = None,
             getChildFrom = None, 
             ):
-        curs.execute(f"SELECT * FROM {fromTable}")
-        print()
-        values = {i: j for i, j in zip(curs.description, curs.fetchall())}
-        self.add()
-        if getChildFrom:
-            for i in values:
-                for j in getChildFrom:
-                    curs.execute(f"SELECT * FROM {getChildFrom[j]} where {j}=={values[i]}")
-                    self.add(curs.fetchall())
+
+        if not getChildFrom:
+            curs.execute(f"SELECT * FROM {fromTable}")
+            self.sheet.headers, self.headers = [curs.description]*2 # Ganger listen med 2 så den indeholder curs.description 2 gang; det gøres fordi den skal sætte curs.description ind i to variabler
+            self.sheet.config(width=(len(self.headers)*120)+30)
+            curs.execute(f"SELECT * FROM {fromTable}")
+            self.add(curs.fetchall())
+        else:
+            curs.execute(f"SELECT * FROM {fromTable} INNER JOIN {getChildFrom[0]} WHERE {fromTable}.{getChildFrom[1]}=={getChildFrom[0]}.{getChildFrom[1]}")
+                    
 
 

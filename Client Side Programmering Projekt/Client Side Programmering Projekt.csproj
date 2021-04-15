@@ -70,7 +70,10 @@
     <Content Include="CodePrettify.css" />
     <Content Include="github.png" />
     <Content Include="background.jpg" />
-    <Content Include="JavaScript.js" />
+    <Content Include="Skriv til mig.html" />
+    <Content Include="skrivTilMig.js" />
+    <Content Include="sideNav.html" />
+    <Content Include="sideNav.js" />
     <Content Include="Om mig.html" />
     <Content Include="Projekter.html" />
     <Content Include="Kontakt.html" />
@@ -81,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="beskeder.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
