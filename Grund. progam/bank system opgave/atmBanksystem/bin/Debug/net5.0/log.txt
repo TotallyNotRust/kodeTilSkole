@@ -1,0 +1,24 @@
+info:12:09:13 PM:Deposited 10
+info:12:12:18 PM:Withdrew 100
+info:12:12:24 PM:Deposited 1000
+info:12:12:29 PM:Withdrew 10
+warning:12:43:43 PM:User tried to withdraw too much money!
+info:12:43:46 PM:Deposited 100
+info:12:43:49 PM:Withdrew 100
+info:12:43:52 PM:Checked balance
+0info:12:49:04 PM:Deposited 100
+warning:12:49:07 PM:User tried to withdraw too much money!
+info:12:49:14 PM:Withdrew 10
+info:12:49:16 PM:Checked balance
+info:12:50:00 PM:Deposited 11
+info:12:50:02 PM:Withdrew -1
+info:12:50:05 PM:Checked balance
+info:12:50:07 PM:Checked balance
+info:12:50:11 PM:Withdrew 102
+info:12:50:13 PM:Deposited 100
+info:12:50:17 PM:Withdrew -1
+info:12:50:18 PM:Checked balance
+info:12:51:04 PM:Deposited 100
+info:12:51:05 PM:Withdrew 1
+info:12:51:09 PM:Checked balance
+warning:12:53:04 PM:User tried to withdraw too much money!
