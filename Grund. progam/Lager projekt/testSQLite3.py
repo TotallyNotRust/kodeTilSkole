@@ -16,7 +16,7 @@ menu = """
 def addToDB():
     table = input("What table: ")
 
-    curs.execute("PRAGMA table_info('users')")
+    curs.execute(f"PRAGMA table_info('{table}')")
     primaryKey = [i[1] for i in curs.fetchall() if i[-1] == 1]
 
     curs.execute(f"SELECT * FROM {table}")
@@ -35,7 +35,7 @@ def addToDB():
     questionMarks = ",".join(["?"]*len(columns))
     print("Kommando: " + f"INSERT INTO {table} VALUES ({questionMarks})", (values))
     curs.execute(f"INSERT INTO {table} VALUES ({questionMarks})", (values))  # bruger noget python magi så en method er kompatibel med alle tables
-    #             "INSER INTO users VALUES ('1', 'Gustav', 'Thomsen', 'Skjoldborgsvej, 22', 'Hjørring', 9800)"
+    #             "INSER INTO users VALUES (1, 'Gustav', 'Thomsen', 'Skjoldborgsvej, 22', 'Hjørring', 9800)"
     conn.commit()
 
 def readFromDB():

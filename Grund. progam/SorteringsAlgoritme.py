@@ -1,6 +1,5 @@
 
 try:
-    get_ipython().run_line_magic('pylab', 'inline')
     from numba import jit # pip install numba
     """
     Numba compiler python metoder til maskin kode. 
@@ -9,10 +8,11 @@ try:
     Mere info på https://numba.pydata.org/
     """
     from numba.typed import List
-    import random
-except NameError:
+    import random, datetime
+except NameError as e:
     print("Please run this command")
     print("python -m pip install -r requirements.txt")
+    print(e)
     input()
     exit()
 
@@ -54,6 +54,9 @@ arg = (list(range(1_000_000)))
 random.shuffle(arg)
 ARG = List()
 [ARG.append(i) for i in arg]
-print(get_ipython().run_line_magic('time', 'quick_sort(ARG, 0, len(ARG)-1)'))
+now = datetime.datetime.now()
+print(quick_sort(ARG, 0, len(ARG)-1))
+print(datetime.datetime.now() - now)
 print(ARG)
+input()
 
