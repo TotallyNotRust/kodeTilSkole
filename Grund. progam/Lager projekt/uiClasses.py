@@ -9,7 +9,7 @@ class Window:
 
 class MainMenu(Window):
     def test(self):
-        print("Hi")
+        print("Hi") 
     def __init__(self, curs):
         super().__init__()
         self.curs = curs
@@ -24,8 +24,9 @@ class ItemMenu(Window):
 
 class OrderMenu(Window):
     def __init__(self, curs):
+        super().__init__()
         itemsTable = Table(self.root, ["oId", "address", "city", "firstname"])
-        itemsTable.fill(curs, "orders", getChildFrom=["users", "uId"], )
+        itemsTable.fill(curs, "orders", getChildFrom=["users", "uId", "id"], )
 
 class CustomTkObject:
     def __add__(self, *kw):
@@ -60,12 +61,14 @@ class Table(CustomTkObject):
 
         if not getChildFrom:
             curs.execute(f"SELECT * FROM {fromTable}")
-            self.sheet.headers, self.headers = [curs.description]*2 # Ganger listen med 2 så den indeholder curs.description 2 gang; det gøres fordi den skal sætte curs.description ind i to variabler
-            self.sheet.config(width=(len(self.headers)*120)+30)
-            curs.execute(f"SELECT * FROM {fromTable}")
-            self.add(curs.fetchall())
+            headers = curs.description
         else:
-            curs.execute(f"SELECT * FROM {fromTable} INNER JOIN {getChildFrom[0]} WHERE {fromTable}.{getChildFrom[1]}=={getChildFrom[0]}.{getChildFrom[1]}")
-                    
+            curs.execute(f"SELECT * FROM {fromTable} INNER JOIN {getChildFrom[0]} WHERE {fromTable}.{getChildFrom[1]}=={getChildFrom[0]}.{getChildFrom[2]}")
+            headers = curs.description
+        self.headers = tuple(i[0] for i in headers)
+        self.sheet.headers(newheaders=self.headers)
+        self.sheet.config(width=(len(self.headers)*120)+30)
+        self.add(curs.fetchall())
+        pass       
 
 

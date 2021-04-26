@@ -22,3 +22,4 @@ info:12:51:04 PM:Deposited 100
 info:12:51:05 PM:Withdrew 1
 info:12:51:09 PM:Checked balance
 warning:12:53:04 PM:User tried to withdraw too much money!
+warning:1:08:55 PM:User tried to withdraw too much money!

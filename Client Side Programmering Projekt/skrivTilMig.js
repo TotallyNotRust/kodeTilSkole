@@ -1,14 +1,17 @@
-﻿function getMessage() {
-    var senderInformation = {
-        "navn": document.getElementById('senderNavn').value,
-        "email": document.getElementById('senderEmail').value,
-        "besked": document.getElementById('senderBesked').value,
-    }
-    var json = JSON.stringify(senderInformation);
-    fs.writeFile('beskeder.json', json, (err) => {
-        if (err) {
-            throw err;
-        }
-        Console.log("Besked sendt")
-    });
+﻿
+
+function getMessage() {
+    alert("Under opsætning.");
 }
+
+function mkNav() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'Skriv til mig.html', true);
+    xhr.onreadystatechange = function () {
+        if (this.readyState !== 4) return;
+        if (this.status !== 200) return;
+        document.getElementById('skrivTilMig').innerHTML = this.responseText;
+    };
+    xhr.send();
+}
+window.onload(mkNav());

@@ -16,27 +16,32 @@ menu = """
 def addToDB():
     table = input("What table: ")
 
-    curs.execute("PRAGMA table_info('users')")
+    curs.execute(f"PRAGMA table_info({table})")
     primaryKey = [i[1] for i in curs.fetchall() if i[-1] == 1]
+    curs.execute(f"PRAGMA foreign_key_list({table})")
+    foreignKeys = [[i[3], i[4], i[2]] for i in curs.fetchall()]
 
-    curs.execute(f"SELECT * FROM {table}")
+    curs.execute(f"SELECT * FROM {table} LIMIT 1")
     columns = curs.description
-    aIInt = len(curs.fetchall()) + 1 # auto increment int; assign this to primary key
+    aIInt = curs.fetchall()[-1][0] + 1 # auto increment int; assign this to primary key
     values = []
     for i in columns:
         if i[0] in primaryKey:
             values.append(aIInt)
             continue
-        value = input(i[0]+": ")
+            value = input(i[0]+": ")
         try:
             values.append(int(value))
         except Exception:
             values.append(value)
+
+                
     questionMarks = ",".join(["?"]*len(columns))
-    print("Kommando: " + f"INSERT INTO {table} VALUES ({questionMarks})", (values))
-    curs.execute(f"INSERT INTO {table} VALUES ({questionMarks})", (values))  # bruger noget python magi så en method er kompatibel med alle tables
+    print("Kommando: " + f"INSERT INTO {table} VALUES {tuple(i for i in values)}")
+    curs.execute(f"INSERT INTO {table} VALUES ({questionMarks})", (values))  # bruger noget python magi snå en method er kompatibel med alle tables
     #             "INSER INTO users VALUES ('1', 'Gustav', 'Thomsen', 'Skjoldborgsvej, 22', 'Hjørring', 9800)"
     conn.commit()
+
 
 def readFromDB():
     table = input("Table: ")
