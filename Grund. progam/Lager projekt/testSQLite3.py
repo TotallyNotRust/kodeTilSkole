@@ -1,5 +1,6 @@
 import sqlite3 as sql
 import uiClasses
+import pandas as pd
 
 conn = sql.connect("database.db")
 curs = conn.cursor()
@@ -8,10 +9,16 @@ curs.execute("""SELECT * FROM orders
                 INNER JOIN users ON orders.uId == users.id""")
 
 menu = """
-#################################
-# Press r to read from database #
-# Press n to add to database    #
-#################################"""
+############################################
+# Press read to read from database         #
+# Press new to add to database             #
+# Press rem to remove from table products  #
+# Press top to view top selling products   #
+############################################"""
+
+def showFromQuery(query):
+    table = pd.read_sql_query(query, conn)
+    print(table)
 
 def addToDB():
     table = input("What table: ")
@@ -29,31 +36,51 @@ def addToDB():
         if i[0] in primaryKey:
             values.append(aIInt)
             continue
-            value = input(i[0]+": ")
+        value = input(i[0]+": ")
         try:
             values.append(int(value))
         except Exception:
             values.append(value)
 
-                
-    questionMarks = ",".join(["?"]*len(columns))
+    formattedColumns = ", ".join(*columns[1:])
+    questionMarks = ", ".join(["?"]*(len(columns)-1))
     print("Kommando: " + f"INSERT INTO {table} VALUES {tuple(i for i in values)}")
-    curs.execute(f"INSERT INTO {table} VALUES ({questionMarks})", (values))  # bruger noget python magi snå en method er kompatibel med alle tables
-    #             "INSER INTO users VALUES ('1', 'Gustav', 'Thomsen', 'Skjoldborgsvej, 22', 'Hjørring', 9800)"
+    curs.execute(f"INSERT INTO {table} ({formattedColumns}) VALUES ({questionMarks})", (values))  # bruger noget python magi snå en method er kompatibel med alle tables
+    #             "INSERT INTO users VALUES ('1', 'Gustav', 'Thomsen', 'Skjoldborgsvej, 22', 'Hjørring', 9800)"
     conn.commit()
 
 
 def readFromDB():
     table = input("Table: ")
-    curs.execute(f"SELECT * FROM {table}")
-    print(list([x[0] for x in curs.description]))
-    for ind, i in enumerate(curs.fetchall()):
-        print("   |   ".join(str(j) for j in i))
+    showFromQuery(f"SELECT * FROM {table}")
+
+def getTopSold():
+    query = "SELECT orderLines.iId, (SELECT name FROM items where items.id == orderLines.iId) as name, COUNT(*) AS amount FROM orderLines GROUP BY orderLines.iId"
+    showFromQuery(query)
+
+def getTable(table):
+    curs.execute(f"PRAGMA table_info({table})")
+    return curs.fetchall()
+
+def removeItem():
+    query = f"""
+        DELETE FROM {(table:= input('Table to remove from: '))} 
+        WHERE 
+        {(primaryKey:=[i[1] for i in getTable(table) if i[-1] == 1][0])} 
+        == 
+        {input(f'{primaryKey} of object to remove: ')
+        }"""
+    curs.execute(query)
+    conn.commit()
 
 while True:
     print(menu, end=None)
     x = input(": ")
-    if x == "n":
+    if x == "new":
         addToDB()
-    elif x == "r":
+    elif x == "read":
         readFromDB()
+    elif x == "top":
+        getTopSold()
+    elif x == "rem":
+        removeItem()
