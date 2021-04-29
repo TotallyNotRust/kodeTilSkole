@@ -1,32 +1,13 @@
-
-try:
-    from numba import jit # pip install numba
-    """
-    Numba compiler python metoder til maskin kode. 
-    Det tillader at python kode kan køres ca. lige så hurtigt som C eller FORTAN kode.
-    Dog tager det en del længere tid at køre metoden første gang.
-    Mere info på https://numba.pydata.org/
-    """
-    from numba.typed import List
-    import random, datetime
-except NameError as e:
-    print("Please run this command")
-    print("python -m pip install -r requirements.txt")
-    print(e)
-    input()
-    exit()
-
-@jit(nopython=True) 
-def partition(array, start=0, end=-1):
-    pivot = array[s]
+from numba import jit, types # pip install numba
+ 
+from numba.typed import List
+import random, datetime
+ 
+def partitionJittedMethod(array, start=0, end=-1):
+    pivot = array[start]
     low = start + 1
     high = end
-    # print(f"{pivot} : {high}")
     while True:
-        """
-        While loop bruges til at sørge for at pivot ender op det rigtige sted.
-        F.eks. hvis du har en liste [3,2,1] vil den ændre 3 og 1 istedet for 3 og 2.
-        """
         while low <= high and array[high] >= pivot:
             high = high - 1
         while low <= high and array[low] <= pivot:
@@ -36,27 +17,26 @@ def partition(array, start=0, end=-1):
         else:
             break
     array[start], array[high] = array[high], array[start]
-
+ 
     return high
-@jit(nopython=True)
-def quick_sort(array, start, end):
+ 
+def quickSortJittedMethod(array, start, end):
     if start >= end:
         return
-
-    p = partition(array, start, end)
-    quick_sort(array, start, p-1)
-    quick_sort(array, p+1, end)
-
-"""
-Looper gennem en list der består af 0-999.999 og printer tiden
-"""
-arg = (list(range(1_000_000)))
-random.shuffle(arg)
-ARG = List()
-[ARG.append(i) for i in arg]
-now = datetime.datetime.now()
-print(quick_sort(ARG, 0, len(ARG)-1))
-print(datetime.datetime.now() - now)
-print(ARG)
-input()
-
+ 
+    p = partitionJitted(array, start, end)
+    quickSortJitted(array, start, p-1)
+    quickSortJitted(array, p+1, end)
+ 
+partitionJitted = jit(partitionJittedMethod, nopython=True)
+quickSortJitted = jit(quickSortJittedMethod, nopython=True)
+ 
+for i in range(1_000):
+    arg = list(range(100_000))
+    random.shuffle(arg)
+    arg = List(arg)
+    start = datetime.datetime.now()
+    quickSortJitted(arg, 0,  len(arg)-1)
+    timeInMs = (datetime.datetime.now() - start).microseconds / 1000
+    print(f"{i:< 4}: Passed: {list(arg)==sorted(arg)} | Time in milliseconds: {timeInMs}")
+        
