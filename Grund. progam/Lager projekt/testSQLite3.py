@@ -55,17 +55,7 @@ def readFromDB():
     showFromQuery(f"SELECT * FROM {table}")
 
 def getTopSold():
-    query = """
-    SELECT 
-        orderLines.iId, 
-        items.name as name, 
-        COUNT(*) AS amount
-
-    FROM orderLines
-        LEFT JOIN items 
-            WHERE items.id == orderLines.iId
-        GROUP BY orderLines.iId
-    """
+    query = "SELECT orderLines.iId, (SELECT name FROM items where items.id == orderLines.iId) as name, COUNT(*) AS amount FROM orderLines GROUP BY orderLines.iId"
     showFromQuery(query)
 
 def getTable(table):
