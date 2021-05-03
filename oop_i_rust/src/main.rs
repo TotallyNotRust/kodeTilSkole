@@ -2,6 +2,48 @@ use std::str::FromStr;
 #[macro_use]
 extern crate fstrings;
 
+struct Address {
+    street: String,
+    city: String,
+    zip: i32,
+}
+
+struct Person {
+    name: String,
+    age: i32,
+    address: Address,
+}
+
+struct Staff {
+    person: Person,
+    staff_id: i32,
+}
+
+impl Staff {
+    pub fn new(name: String, age: i32, address: Address, staff_id: i32) -> Staff {
+        Staff {
+            person: Person {
+                name:name,
+                age:age,
+                address:address
+            },
+            staff_id:staff_id,
+        }
+    }
+    pub fn name(&self) -> &String {
+        &self.person.name
+    }
+    pub fn age(&self) -> &i32 {
+        &self.person.age
+    }
+    pub fn address(&self) -> &Address {
+        &self.person.address
+    }
+    pub fn id(&self) -> &i32 {
+        &self.staff_id
+    }
+}
+
 struct Date {
     day: i32,
     month: i32,
