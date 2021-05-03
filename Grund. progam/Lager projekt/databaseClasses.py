@@ -21,7 +21,7 @@ class Order:
         self.database = database
         self.database.execute(f"SELECT * FROM {orderlineTable} WHERE oId=={orderID}")
         self.orderLines = [OrderLine(i, self) for i in database.fetchall()]
-        self.database.execute(f"SELECT * FROM users WHERE id=={}")
+        self.database.execute(f"SELECT * FROM users WHERE id=={orderID}")
         self.user = self.database.fetchone()
         self.orderID = orderID
 

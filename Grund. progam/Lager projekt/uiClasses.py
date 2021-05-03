@@ -39,7 +39,7 @@ class MainMenu(Window):
         self.curs = curs
         Button(self.root, text="Se alle varer", command=lambda:ItemMenu(self.curs)).pack()
         Button(self.root, text="Se alle ordrer", command=lambda:OrderMenu(self.curs)).pack()
-        Button(self.root, text="Se alle ordrer", command=lambda:AddToDBWindow(self.curs, "orders")).pack()
+        Button(self.root, text="Lav ny ordrer", command=lambda:AddToDBWindow(self.curs, "orders")).pack()
 
 class ItemMenu(Window):
     def __init__(self, curs):
