@@ -1,11 +1,35 @@
 from tkinter import *
 from tkinter.ttk import *
 from tksheet import Sheet
+import sqlite3
 
 class Window:
     def __init__(self, geometry="500x500"):
         self.root = Tk()
         self.root.geometry(geometry)
+
+class AddToDBWindow(Window):
+    def __init__(self, columns: list, table, curs = None, database = "database.db"):
+        super().__init__()
+        self.columns = columns
+        if not curs:
+            self.database = sqlite3.connect(database)
+            self.curs = self.database.cursor()
+        else:
+            self.curs = curs
+        self.entries = []
+
+        for ind, i in enumerate(columns):
+            Label(self.root, text=i).grid(row=ind, column=0)
+            entry = Entry(self.root)
+            self.entries.append(entry)
+            entry.grid(row=ind, column = 1)
+
+        Button(self.root, text="Færdig").grid(row=len(self.entries))
+            
+    def add(self, table, variables):
+        questionMarks = ",".join(["?"]*len(self.columns))
+        self.curs.execute(f"INSER INTO {table} VALUES ({questionMarks})", variables)
 
 class MainMenu(Window):
     def test(self):
@@ -13,8 +37,9 @@ class MainMenu(Window):
     def __init__(self, curs):
         super().__init__()
         self.curs = curs
-        Button(self.root, text="Say hi!", command=lambda:ItemMenu(self.curs)).pack()
-        Button(self.root, text="Say hi!", command=lambda:OrderMenu(self.curs)).pack()
+        Button(self.root, text="Se alle varer", command=lambda:ItemMenu(self.curs)).pack()
+        Button(self.root, text="Se alle ordrer", command=lambda:OrderMenu(self.curs)).pack()
+        Button(self.root, text="Se alle ordrer", command=lambda:AddToDBWindow(self.curs, "orders")).pack()
 
 class ItemMenu(Window):
     def __init__(self, curs):
@@ -27,6 +52,11 @@ class OrderMenu(Window):
         super().__init__()
         itemsTable = Table(self.root, ["oId", "address", "city", "firstname"])
         itemsTable.fill(curs, "orders", getChildFrom=["users", "uId", "id"], )
+
+class newOrder(AddToDBWindow):
+    def __init__():
+        super().__init__()
+
 
 class CustomTkObject:
     def __add__(self, *kw):

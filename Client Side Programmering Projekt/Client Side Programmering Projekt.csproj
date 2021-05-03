@@ -70,6 +70,7 @@
     <Content Include="CodePrettify.css" />
     <Content Include="github.png" />
     <Content Include="background.jpg" />
+    <Content Include="index.html" />
     <Content Include="Skriv til mig.html" />
     <Content Include="skrivTilMig.js" />
     <Content Include="sideNav.html" />
