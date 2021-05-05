@@ -4,7 +4,7 @@ namespace Rap_Finands {
     class Transaktion {
         public string tekst;
         public float saldo;
-        public float amount;
+        public float mængde;
         public DateTime dato;
         
     }

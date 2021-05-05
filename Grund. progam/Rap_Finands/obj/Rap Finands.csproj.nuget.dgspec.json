@@ -1,26 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lkri\\Documents\\Undervisningsmateriale\\GrundlæggendeProgrammering\\Fejlfinding\\Rap_Finands\\Rap Finands.csproj": {}
+    "C:\\Users\\Gustav\\Documents\\GitHub\\kodeTilSkole\\Grund. progam\\Rap_Finands\\Rap Finands.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lkri\\Documents\\Undervisningsmateriale\\GrundlæggendeProgrammering\\Fejlfinding\\Rap_Finands\\Rap Finands.csproj": {
+    "C:\\Users\\Gustav\\Documents\\GitHub\\kodeTilSkole\\Grund. progam\\Rap_Finands\\Rap Finands.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lkri\\Documents\\Undervisningsmateriale\\GrundlæggendeProgrammering\\Fejlfinding\\Rap_Finands\\Rap Finands.csproj",
+        "projectUniqueName": "C:\\Users\\Gustav\\Documents\\GitHub\\kodeTilSkole\\Grund. progam\\Rap_Finands\\Rap Finands.csproj",
         "projectName": "Rap Finands",
-        "projectPath": "C:\\Users\\lkri\\Documents\\Undervisningsmateriale\\GrundlæggendeProgrammering\\Fejlfinding\\Rap_Finands\\Rap Finands.csproj",
-        "packagesPath": "C:\\Users\\lkri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lkri\\Documents\\Undervisningsmateriale\\GrundlæggendeProgrammering\\Fejlfinding\\Rap_Finands\\obj\\",
+        "projectPath": "C:\\Users\\Gustav\\Documents\\GitHub\\kodeTilSkole\\Grund. progam\\Rap_Finands\\Rap Finands.csproj",
+        "packagesPath": "C:\\Users\\Gustav\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gustav\\Documents\\GitHub\\kodeTilSkole\\Grund. progam\\Rap_Finands\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\lkri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Gustav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {}
           }
         },
@@ -42,6 +43,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -81,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
