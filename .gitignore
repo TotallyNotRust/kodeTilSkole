@@ -1,2 +1,6 @@
 Grund. progam\Lager projekt rust\code\target\*
 *.bin
+*.lock
+*.dll
+*.bin
+*.cache
