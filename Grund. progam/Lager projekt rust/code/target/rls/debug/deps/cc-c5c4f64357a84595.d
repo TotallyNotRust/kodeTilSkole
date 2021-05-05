@@ -1,0 +1,12 @@
+c:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\rls\debug\deps\cc-c5c4f64357a84595.rmeta: C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\lib.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\registry.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\winapi.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\com.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\setup_config.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\windows_registry.rs
+
+c:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\rls\debug\deps\libcc-c5c4f64357a84595.rlib: C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\lib.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\registry.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\winapi.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\com.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\setup_config.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\windows_registry.rs
+
+c:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\rls\debug\deps\cc-c5c4f64357a84595.d: C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\lib.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\registry.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\winapi.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\com.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\setup_config.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\windows_registry.rs
+
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\lib.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\registry.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\winapi.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\com.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\setup_config.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\cc-1.0.67\src\windows_registry.rs:

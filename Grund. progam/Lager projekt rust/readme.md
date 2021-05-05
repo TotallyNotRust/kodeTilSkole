@@ -1,0 +1,1 @@
+## Lager projekt, denne gang i rust-lang

@@ -1,0 +1,11 @@
+C:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\debug\deps\libc-46eb8c6667d06d3e.rmeta: C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\lib.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\macros.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\fixed_width_ints.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\windows\mod.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\windows\msvc.rs
+
+C:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\debug\deps\liblibc-46eb8c6667d06d3e.rlib: C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\lib.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\macros.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\fixed_width_ints.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\windows\mod.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\windows\msvc.rs
+
+C:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\debug\deps\libc-46eb8c6667d06d3e.d: C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\lib.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\macros.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\fixed_width_ints.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\windows\mod.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\windows\msvc.rs
+
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\lib.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\macros.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\fixed_width_ints.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\windows\mod.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\libc-0.2.94\src\windows\msvc.rs:

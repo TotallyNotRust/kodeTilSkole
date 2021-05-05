@@ -1,0 +1,10 @@
+c:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\rls\debug\build\fltk-sys-978c1982e2452de6\build_script_main-978c1982e2452de6.exe: C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build/main.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\android.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\bundled.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\link.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\source.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\utils.rs
+
+c:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\rls\debug\build\fltk-sys-978c1982e2452de6\build_script_main-978c1982e2452de6.d: C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build/main.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\android.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\bundled.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\link.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\source.rs C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\utils.rs
+
+C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build/main.rs:
+C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\android.rs:
+C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\bundled.rs:
+C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\link.rs:
+C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\source.rs:
+C:\Users\Gustav\.cargo\git\checkouts\fltk-rs-9307d2141514d51d\7bf4dcb\fltk-sys\build\utils.rs:

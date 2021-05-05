@@ -1,0 +1,10 @@
+C:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\debug\build\fltk-sys-d514fc6a3c41cab8\build_script_main-d514fc6a3c41cab8.exe: C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build/main.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\android.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\bundled.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\link.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\source.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\utils.rs
+
+C:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund. progam\Lager projekt rust\code\target\debug\build\fltk-sys-d514fc6a3c41cab8\build_script_main-d514fc6a3c41cab8.d: C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build/main.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\android.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\bundled.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\link.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\source.rs C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\utils.rs
+
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build/main.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\android.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\bundled.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\link.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\source.rs:
+C:\Users\Gustav\.cargo\registry\src\github.com-1ecc6299db9ec823\fltk-sys-1.0.8\build\utils.rs:
