@@ -5,8 +5,7 @@ import pandas as pd
 conn = sql.connect("database.db")
 curs = conn.cursor()
 
-curs.execute("""SELECT * FROM orders
-                INNER JOIN users ON orders.uId == users.id""")
+curs.execute("PRAGMA foreign_keys = ON;")
 
 menu = """
 ############################################
@@ -17,40 +16,44 @@ menu = """
 ############################################"""
 
 def showFromQuery(query):
-    table = pd.read_sql_query(query, conn)
-    print(table)
+    try:
+        table = pd.read_sql_query(query, conn)
+        print(table)
+    except Exception as e:
+        print(e)
 
 def addToDB():
-    table = input("What table: ")
+    while True:
+        table = input("What table: ")
+        try:
+            curs.execute(f"PRAGMA table_info({table})")
+            primaryKey = [i[1] for i in curs.fetchall() if i[-1] == 1]
 
-    curs.execute(f"PRAGMA table_info({table})")
-    primaryKey = [i[1] for i in curs.fetchall() if i[-1] == 1]
-    curs.execute(f"PRAGMA foreign_key_list({table})")
-    foreignKeys = [[i[3], i[4], i[2]] for i in curs.fetchall()]
-
-    curs.execute(f"SELECT * FROM {table} LIMIT 1")
-    columns = curs.description
-    aIInt = curs.fetchall()[-1][0] + 1 # auto increment int; assign this to primary key
+            curs.execute(f"SELECT * FROM {table} LIMIT 1")
+            columns = [i[0] for i in curs.description if not i[0] in primaryKey]
+            break
+        except Exception:
+            continue
+    
     values = []
     for i in columns:
-        if i[0] in primaryKey:
-            values.append(aIInt)
-            continue
-        value = input(i[0]+": ")
-        try:
-            values.append(int(value))
-        except Exception:
-            values.append(value)
+        value = input(i+": ")
 
-    formattedColumns = ", ".join(*columns[1:])
-    questionMarks = ", ".join(["?"]*(len(columns)-1))
+        values.append(value)
+
+    formattedColumns = ", ".join(columns)
+    questionMarks = ", ".join(["?"]*(len(columns)))
     print("Kommando: " + f"INSERT INTO {table} VALUES {tuple(i for i in values)}")
-    curs.execute(f"INSERT INTO {table} ({formattedColumns}) VALUES ({questionMarks})", (values))  # bruger noget python magi snå en method er kompatibel med alle tables
-    #             "INSERT INTO users VALUES ('1', 'Gustav', 'Thomsen', 'Skjoldborgsvej, 22', 'Hjørring', 9800)"
-    conn.commit()
+    try:
+        curs.execute(f"INSERT INTO {table} ({formattedColumns}) VALUES ({questionMarks})", (values))  # bruger noget python magi snå en method er kompatibel med alle tables
+        conn.commit()
+    except Exception as e:
+        print("\nOne of the entered values is not valid: ")
+        print(e)
 
 
 def readFromDB():
+    con.commit()
     table = input("Table: ")
     showFromQuery(f"SELECT * FROM {table}")
 
