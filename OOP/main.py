@@ -1,19 +1,32 @@
-#import classes
-import classes
+# Klasser, nedarvning, properties, constructor, override
+from classes import *
 
 people = People(Person("Jørgen", 41), Person("Lene", 28))
 
+def TestWorkingClasses():
+    person = Person("Bo", 51)
 
+    people.add(person)
 
-person = Person("Bo", 51)
+    person2 = Person("Mogens", 81)
 
-person.name, person.age
+    people + person2
 
-people.add(person)
+    PrintPeople()
 
-person2 = Person("Mogens", 81)
+def TestAbstractClass():
+    abstractPerson = AbstractPerson()
 
-people + person2
+    print(abstractPerson.return_self())
 
-for person in people:
-    print(person)
+def TestExceptionHandling():
+    while True:
+        try:
+            people + eval(input("Make me a class: "))
+            break
+        except Exception:
+            print("Not valid person")
+
+def PrintPeople():
+    for person in people:
+        print(person)
