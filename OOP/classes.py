@@ -1,8 +1,15 @@
 from typing import Union
+
 class Person:
     def __init__(self, name: str, age: int):
         self.name = name
         self.age = age
+    @property
+    def fullname(self):
+        return self.name
+    @fullname.setter
+    def fullname_set(self, val):
+        self.name = val
 # Nedarvning
 class Staff(Person):
     # Constructor, returnere en instans af people
@@ -28,11 +35,12 @@ class People:
         for i in self.people:
             yield [i.name, i.age]
 
+class AbstractClassInit(Exception):
+    pass
+
 class AbstractPerson:
-    def __add__():
-        raise NotImplementedError
-    def return_self():
-        raise NotImplementedError
+    def __init__(self):
+        raise AbstractClassInit("You can not instanciate an abstract class")
 
 """ Overrides:
 Python har ikke overrides da variabler ikke har en statisk type
@@ -58,8 +66,4 @@ Metoder og properties som kan tilgås fra alle metoder
 Protected: Metoder og properties der kun kan tilgås fra dens egen klasse eller en klasse som nedarver fra den.
 
 Internal: Metoder og properties som kun kan tilgås fra den samme assembly.
-"""
-""" Properties
-Et variable der har en getter og setter.
-De kan f.eks bruges til at vælge hvordan en bruger får noget data fra en private variable
 """
