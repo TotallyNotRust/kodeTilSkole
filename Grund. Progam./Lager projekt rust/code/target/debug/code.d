@@ -1,1 +1,1 @@
-C:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund.\ progam\Lager\ projekt\ rust\code\target\debug\code.exe: C:\Users\Gustav\Documents\GitHub\kodeTilSkole\Grund.\ progam\Lager\ projekt\ rust\code\src\main.rs
+/home/gustav/kodeTilSkole/Grund.\ Progam./Lager\ projekt\ rust/code/target/debug/code: /home/gustav/kodeTilSkole/Grund.\ Progam./Lager\ projekt\ rust/code/src/main.rs

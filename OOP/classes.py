@@ -1,4 +1,5 @@
 from typing import Union
+from abc import abstractmethod, ABC
 
 class Person:
     def __init__(self, name: str, age: int):
@@ -38,9 +39,14 @@ class People:
 class AbstractClassInit(Exception):
     pass
 
-class AbstractPerson:
-    def __init__(self):
-        raise AbstractClassInit("You can not instanciate an abstract class")
+class AbstractPerson(ABC):
+    @abstractmethod
+    def __init__(self, name="", age=0):
+        self.name = name
+        self.age = age
+    @abstractmethod
+    def __addToAge__():
+        self.age += 1
 
 """ Overrides:
 Python har ikke overrides da variabler ikke har en statisk type

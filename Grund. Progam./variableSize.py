@@ -24,7 +24,7 @@ def pointerExample(var):
     printByteArray(x)
                    
     
-def printByteArray(var, a=4, s=0): # amount = amount; amount per line. s = start; hvor array starter
+def printByteArray(var, a=4, s=0): # a = amount; amount per line. s = start; hvor array starter
     for i in range(0, round(var/a)*a, a):
         for x in range(a):
             print(f"+---{i+x+s:^4}---+", end="" if not x+1 == a else "\n")
