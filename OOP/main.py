@@ -27,6 +27,9 @@ def TestExceptionHandling():
         except Exception:
             print("Not valid person")
 
+def Undo():
+    people.people.pop(len(people.people)-1)
+
 def PrintPeople():
     for person in people:
         print(person)

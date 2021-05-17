@@ -36,9 +36,6 @@ class People:
         for i in self.people:
             yield [i.name, i.age]
 
-class AbstractClassInit(Exception):
-    pass
-
 class AbstractPerson(ABC):
     @abstractmethod
     def __init__(self, name="", age=0):
@@ -48,16 +45,7 @@ class AbstractPerson(ABC):
     def __addToAge__():
         self.age += 1
 
-""" Overrides:
-Python har ikke overrides da variabler ikke har en statisk type
-I f.eks. C# ville man bruge overrides til at have en metode der kan tage både en int og en float
-static int add(int one, int two) {
-    return one + two;
-}
-static float add(float one, float two) {
-    return one + two;
-}
-"""
+
 """ Accesibility
 Python har ikke Accesibility til deres klasser, 
 Istedet har man lavet det standard practice at bruge dunder (__) får og efter metoder og properties som skal ses som private,
