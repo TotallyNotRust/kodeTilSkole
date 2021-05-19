@@ -31,3 +31,6 @@
 > - address > Users Adress
 > - city > Users City
 > - zipCode > Users Zip Code
+
+> ## location
+> - sheld_id > Shelf id
